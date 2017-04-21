@@ -1,0 +1,111 @@
+body
+{
+    width: 100%;
+    text-align: center;
+    background: url("../images/bg.jpg");
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header h2{
+    color: #118ADB;
+    font-size: 30px;
+}
+header h2 span{
+    background:url("../images/timg.jpg")no-repeat ;
+    background-size: 100px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    margin-right: 30px;
+}
+#game{
+    background-image: url("../images/table.jpg");
+    width: 502px;
+    height: 462px;
+    margin: 30px auto;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+}
+#cards
+{
+    width: 380px;
+    height: 400px;
+    position: relative;
+    margin:30px auto;
+}
+.card
+{
+    width: 80px;
+    height: 120px;
+    position: absolute;
+}
+.face{
+    width: 100%;
+    height: 100%;
+    border-radius:10px;
+    position: absolute;
+}
+.face:hover
+{
+    box-shadow: 0 0 40px #aaa;
+
+}
+.front
+{
+    background-color: #999;
+    background-image: url("../images/deck.png");
+    background-position: 0 -480px;
+    z-index: 10;
+}
+.back
+{
+    background-image:  url("../images/deck.png");
+    background-color: #efefef;
+    z-index: 8;
+}
+/*牌面定位样式*/
+.cardAJ
+{
+    background-position: -800px 0;
+}
+.cardAQ
+{
+    background-position: -880px 0;
+}
+.cardAK
+{
+    background-position: -960px 0;
+}
+.cardBJ
+{
+    background-position: -800px -120px;
+}
+.cardBQ
+{
+    background-position: -880px -120px;
+}
+.cardBK
+{
+    background-position: -960px -120px;
+}
+.card-flipped .front
+{
+    /*保证牌底在牌面下面，z-index值切换为小值*/
+    z-index: 8;
+    -webkit-transform: rotateY(180deg);
+}
+.card-flipped .back
+{
+    /*保证牌底在牌面上面，z-index值切换为大值*/
+    z-index: 10;
+    /*前面牌面已经翻过去，现在返回来*/
+    -webkit-transform: rotateY(0deg);
+}
+/*移除牌*/
+.card-removed
+{
+    opacity: 0;
+}
